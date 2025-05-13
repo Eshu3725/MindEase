@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindEase Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <script type="module" src="login.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="Sticker.gif" alt="Chatbot" class="robot-image" />
+        </div>
+        <div class="right-section">
+            <div class="form-box">
+                <div class="logo">
+                    <img src="https://img.icons8.com/fluency/48/000000/chatbot.png" alt="Logo" />
+                    <h2>MIND<span>EASE</span></h2>
+                </div>
+                <form id="loginForm">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email address" />
+
+                    <label for="password">
+                        Password <a href="reset-password.html">Forgot Password?</a>
+                      </label>
+
+                    <input type="password" id="password" placeholder="Password" required aria-label="Password" />
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="remember" />
+                        <label for="remember">Remember Me</label>
+                    </div>
+
+                    <button type="submit" aria-label="Sign In">Sign In</button>
+                    <p id="loginError" class="error-message"></p>
+                </form>
+                <div class="footer">
+                    <p>New on our Platform? <a href="signup.html">Create an Account</a></p>
+                    <p class="or-divider">Or sign in with</p>
+                    <div class="social-icons">
+                        <a href="#" title="Sign in with Facebook"><img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook" /></a>
+                        <a href="#" title="Sign in with X"><img src="https://img.icons8.com/ios-filled/48/x.png" alt="X" /></a>
+                        <a href="#" id="googleSignIn" title="Sign in with Google"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <script src="login.js" defer></script>
+</body>
+</html>

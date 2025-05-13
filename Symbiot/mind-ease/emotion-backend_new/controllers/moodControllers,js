@@ -1,0 +1,24 @@
+const axios = require('axios');
+const Mood = require('../models/Mood');
+
+exports.checkInMood = async (req, res) => {
+  const { userId, textInput } = req.body;
+
+  try {
+    const response = await axios.post('https://your-ml-api.com/predict/text', { text: textInput });
+    const { emotion, confidence } = response.data;
+
+    const mood = new Mood({ userId, textInput, emotion, confidence });
+    await mood.save();
+
+    res.status(200).json(mood);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to process mood check-in' });
+  }
+};
+
+exports.getMoodHistory = async (req, res) => {
+  const { userId } = req.query;
+  const history = await Mood.find({ userId }).sort({ timestamp: -1 });
+  res.status(200).json(history);
+};

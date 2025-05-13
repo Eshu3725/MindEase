@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .auth-container {
+    @apply flex flex-col md:flex-row max-w-[900px] w-full bg-white/5 rounded-[20px] overflow-hidden shadow-lg backdrop-blur-md;
+  }
+  
+  .auth-left-section {
+    @apply flex-1 flex justify-center items-center p-10 bg-transparent;
+  }
+  
+  .auth-right-section {
+    @apply flex-1 p-10 bg-white;
+  }
+  
+  .auth-form-box {
+    @apply w-full;
+  }
+  
+  .auth-logo {
+    @apply flex items-center gap-2.5 mb-7;
+  }
+  
+  .auth-heading {
+    @apply mb-5 text-primary-dark text-xl font-semibold;
+  }
+  
+  .auth-form {
+    @apply flex flex-col;
+  }
+  
+  .auth-label {
+    @apply text-sm mt-2.5 mb-1 text-gray-700;
+  }
+  
+  .auth-input {
+    @apply p-2.5 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-primary-light;
+  }
+  
+  .auth-button {
+    @apply bg-primary-light text-white py-3 border-none rounded-full text-base mt-5 cursor-pointer transition-colors hover:bg-primary;
+  }
+  
+  .auth-footer {
+    @apply text-center mt-5;
+  }
+  
+  .auth-footer-text {
+    @apply text-sm;
+  }
+  
+  .auth-link {
+    @apply text-primary-dark no-underline font-medium;
+  }
+  
+  .social-icons {
+    @apply mt-2.5;
+  }
+  
+  .social-icon {
+    @apply mx-1 inline-block;
+  }
+  
+  .social-icon-img {
+    @apply w-7;
+  }
+  
+  .preference-card {
+    @apply bg-white rounded-xl shadow-md p-5 w-[300px] transition-transform hover:translate-y-[-5px];
+  }
+  
+  .preference-card-img {
+    @apply w-20 mb-4;
+  }
+  
+  .preference-card-title {
+    @apply text-primary-dark;
+  }
+  
+  .preference-card-text {
+    @apply text-gray-600 mb-5;
+  }
+  
+  .preference-card-button {
+    @apply bg-primary text-white border-none py-2.5 px-4 rounded-lg cursor-pointer transition-colors hover:bg-primary-dark;
+  }
+}

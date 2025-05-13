@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI CRM - Sign Up</title>
+  <link rel="stylesheet" href="signup.css" />
+  <script type="module" src="signup.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <img src="Sticker.gif" alt="Chatbot" class="robot-image" />
+    </div>
+    <div class="right-section">
+      <div class="form-box">
+        <div class="logo">
+          <img src="https://img.icons8.com/fluency/48/000000/chatbot.png" alt="Logo" />
+          <h2>MIND<span>EASE</span></h2>
+        </div>
+        <h3>Create Your Account</h3>
+        <form id="signupForm">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="Fullname" required />
+          <label for="course">Current Course</label>
+          <input type="text" id="course" placeholder="Course" required />
+          <label for="gender">Gender</label>
+          <select id="gender" required>
+            <option value="" disabled selected>Select your gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Password" required />
+          <p id="signupError" style="color: red;"></p>
+          <button type="submit">Sign Up</button>
+        </form>
+        <div class="footer">
+          <p>Already have an account? <a href="login.html">Sign In</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

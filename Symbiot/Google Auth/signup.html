@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIND-EASE - Sign Up</title>
+  <link rel="stylesheet" href="signup.css" />
+
+  <!-- Load your signup JavaScript file -->
+  <script type="module" src="signup.js" defer></script>
+
+  <!-- Firebase SDKs -->
+<script type="module">
+    // Import the functions you need from the SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  
+    // Your Firebase config
+    const firebaseConfig = {
+    apiKey: "AIzaSyATSN1sAjas0MiKmo6RDMdUCZ1aXZReBus",
+    authDomain: "authentication-4e3bb.firebaseapp.com",
+    projectId: "authentication-4e3bb",
+    storageBucket: "authentication-4e3bb.firebasestorage.app",
+    messagingSenderId: "433153429402",
+    appId: "1:433153429402:web:2682b2a3ac9eb5d4bab423",
+    measurementId: "G-19LMVXM39P"
+  };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+  
+    // Export to use in other modules
+    export { auth, db, createUserWithEmailAndPassword, doc, setDoc };
+  </script>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <img src="Sticker.gif" alt="Chatbot" class="robot-image" />
+    </div>
+    <div class="right-section">
+      <div class="form-box">
+        <div class="logo">
+          <img src="https://img.icons8.com/fluency/48/000000/chatbot.png" alt="Logo" />
+          <h2>MIND<span>EASE</span></h2>
+        </div>
+        <h3>Create Your Account</h3>
+        <form id="signupForm">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="Fullname" required />
+
+          <label for="course">Current Course</label>
+          <input type="text" id="course" placeholder="Course" required />
+
+          <label for="gender">Gender</label>
+          <select id="gender" required>
+            <option value="" disabled selected>Select your gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Password" required />
+
+          <p id="signupError" style="color: red;"></p>
+
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="footer">
+          <p>Already have an account? <a href="login.html">Sign In</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

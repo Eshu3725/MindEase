@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Your Preference</title>
+  <link rel="stylesheet" href="preferences.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Select Your Analysis Preference</h2>
+    <div class="cards">
+      <div class="card" id="audioVideoCard">
+        <img src="https://img.icons8.com/color/96/video-call.png" alt="Audio Video Icon">
+        <h3>Audio & Video Based Analysis</h3>
+        <p>Interact using your voice or camera for a more immersive AI experience.</p>
+        <button onclick="selectPreference('audio_video')">Select</button>
+      </div>
+
+      <div class="card" id="textCard">
+        <img src="https://img.icons8.com/color/96/document.png" alt="Text Icon">
+        <h3>Text Based Analysis</h3>
+        <p>Communicate through typed messages for a text-only analysis experience.</p>
+        <button onclick="selectPreference('text')">Select</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { db } from './firebase-config.js';
+    import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    async function selectPreference(preference) {
+      const uid = sessionStorage.getItem("uid");
+      if (!uid) return alert("Session expired. Please sign up again.");
+
+      try {
+        await updateDoc(doc(db, "users", uid), {
+          preference: preference
+        });
+
+        alert("Preference saved! Redirecting to dashboard...");
+        window.location.href = "dashboard.html";
+      } catch (error) {
+        alert("Error saving preference: " + error.message);
+      }
+    }
+  </script>
+</body>
+</html>
