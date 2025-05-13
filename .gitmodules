@@ -1,0 +1,7 @@
+[submodule "Symbiot/mind-ease/emotional-frontend"]
+	path = Symbiot/mind-ease/emotional-frontend
+	url = https://github.com/hitesh330507/Emotional_EduTech.git
+
+[submodule "Symbiot/Backend/emotional-frontend"]
+	path = Symbiot/Backend/emotional-frontend
+	url = https://github.com/hitesh330507/Emotional_EduTech.git
